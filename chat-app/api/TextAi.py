@@ -27,7 +27,7 @@ tokenizer2 = AutoTokenizer.from_pretrained("Unmeshraj/skin-disease-treatment-pla
 model2 = AutoModel.from_pretrained("Unmeshraj/skin-disease-treatment-plan")
 image_model = models.resnet18(pretrained=False)
 image_model.fc = torch.nn.Linear(image_model.fc.in_features, len(classes))
-image_model.load_state_dict(torch.load("SkinDiseaseAI2/chat-app/api/model.pth", map_location=device))
+image_model.load_state_dict(torch.load("C:/Users/unmes/OneDrive/Desktop/EL/SkinDiseaseAI2/chat-app/api/model.pth", map_location=device))
 image_model.eval()
 
 transform = transforms.Compose([
@@ -87,7 +87,7 @@ def fetchDoctors(location, query, mode, backupQuery, backupMode, locality):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36"
     }
-
+# testting git page
     def fetch_from_url(query, mode):
         url = f"https://www.practo.com/search/doctors?results_type=doctor&q=%5B%7B%22word%22%3A%22{query}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22{mode}%22%7D%2C%7B%22word%22%3A%22{locality}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&city={location}"
         response = requests.get(url, headers=headers)
@@ -122,7 +122,7 @@ def fetchDoctors(location, query, mode, backupQuery, backupMode, locality):
         return doctor_data, response.status_code
     
     if not doctor_data:
-        doctor_data, status_code = backupFetch("https://www.practo.com/search/doctors?results_type=doctor&q=%5B%7B%22word%22%3A%22dermatologist%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22subspeciality%22%7D%2C%7B%22word%22%3A%22indiranagar%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&city=bangalore")
+        doctor_data, status_code = backupFetch("https://www.practo.com/search/doctors?results_type=doctor&q=%5B%7B%22word%22%3A%22dermatologist%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22subspeciality%22%7D%2C%7B%22word%22%3A%22kengeri%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&city=bangalore")
 
     if not doctor_data:
         return {"error": f"No doctors found for both primary ({query}) and backup ({backupQuery}). Status Code: {status_code}"}
@@ -177,7 +177,7 @@ def GenResult():
         similar_disease = find_similar_disease(input_query)
         treatment_plan = find_treatment_plan(similar_disease).replace("*", "").replace(":", ":\n").replace(". ", ".\n")
 
-        locality = "Kengeri"
+        locality = "Indiranagar"
         location = "bangalore"
         query = similar_disease.replace(" ", "%20")
         mode = "symptom"

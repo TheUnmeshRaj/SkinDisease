@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ChatStorage.js"
+  },
+  "keywords": [],
+  "author": "MignightGamer",
+  "license": "ISC",
+  "description": "A backend application for handling chatroom data",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.1",
+    "nodemon": "^3.1.9"
+  }
+}

@@ -200,12 +200,43 @@ h1, h2, p {
   width: 100%;
   height: 40px;
   border-radius: 20px;
-  padding-left: 10px;
+  padding-left: 50px; /* Space for upload button */
   border: 2px solid black;
 }
 
+.upload-button {
+  position: absolute;
+  left: 9px; /* Place the upload button inside the input field */
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #2d525d, #c4f1fe, #a3ceda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, 0.3s ease;
+  top: 23px;
+}
 
-.search-button {
+.upload-icon {
+  width: 20px;
+  height: 20px;
+  background: url("C:/Users/unmes/OneDrive/Desktop/EL/SkinDiseaseAI2/chat-app/src/components/images/clipIcon.png")
+    no-repeat center;
+  background-size: contain;
+}
+
+.upload-button:hover{
+  cursor: pointer;
+  background: linear-gradient(45deg,  #c4f1fe, #a3ceda,#2d525d);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-button  {
   position: absolute;
   width: 35px;
   height: 35px;
@@ -228,7 +259,6 @@ h1, h2, p {
   background: linear-gradient(45deg,  #c4f1fe, #a3ceda,#2d525d);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
 
 .magnifying-glass {
   width: 100%;

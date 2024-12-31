@@ -5,6 +5,7 @@ import NoteContext from '../NoteContext';
 import googlePoint from './assets/googlePoint.png';
 
 import magnifyingGlass from '../images/searchIcon.png';
+import clipIcon from '../images/clipIcon.png';
 
 const headingTxt = "Welcome to our Skin Disease Detection AI";
 const InitialText = "Your reliable companion for skin health! Our advanced AI tool uses cutting-edge technology to accurately identify and classify a wide range of skin conditions. Whether you're concerned about a new spot, rash, or other issues, our system provides quick and reliable insights, helping you stay informed and proactive about your skin health.";
@@ -18,6 +19,8 @@ function InputText(props) {
   const { userId } = useContext(NoteContext);
   const { mainRes, setMainRes } = useContext(NoteContext);
   const currUserId = userId;
+const [selectedImage, setSelectedImage] = useState(null);
+
 
   const fetchRes = () => {
     const data = { inputText };
@@ -66,7 +69,13 @@ function InputText(props) {
       setInputText('');
     }
   };
-
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedImage(file);
+      console.log("Selected image:", file);
+    }
+  };
   const changeTxt = (e) => {
     setInputText(e.target.value);
   };
@@ -166,23 +175,41 @@ function InputText(props) {
         {renderFunc()}
       </div>
       <div className="ip-search">
-        <input
-          type="text"
-          value={inputText}
-          onChange={changeTxt}
-          placeholder="Enter your query"
-          className="ip"
-        />
-        <button onClick={handleClick} disabled={loading} className="search-button">
-          {loading ? (
-            <div className="loading-spinner">
-              <div className="spinner"></div>
-            </div>
-          ) : (
-            <img src={magnifyingGlass} alt="Search" className="magnifying-glass" />
-          )}
-        </button>
+  {/* Upload Button for Image */}
+  <button className="upload-button" onClick={() => document.getElementById('imageInput').click()}>
+    <img src={clipIcon} alt="Upload" className="upload-icon" />
+  </button>
+  
+  {/* Hidden Image Input */}
+  <input
+    type="file"
+    id="imageInput"
+    style={{ display: 'none' }}
+    accept="image/*"
+    onChange={(e) => handleFileUpload(e)}
+  />
+  
+  {/* Text Input */}
+  <input
+    type="text"
+    value={inputText}
+    onChange={changeTxt}
+    placeholder="Enter your query"
+    className="ip"
+  />
+  
+  {/* Search Button */}
+  <button onClick={handleClick} disabled={loading} className="search-button">
+    {loading ? (
+      <div className="loading-spinner">
+        <div className="spinner"></div>
       </div>
+    ) : (
+      <img src={magnifyingGlass} alt="Search" className="magnifying-glass" />
+    )}
+  </button>
+</div>
+
     </div>
   );
 }

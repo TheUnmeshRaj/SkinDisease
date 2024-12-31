@@ -1,0 +1,127 @@
+/* Cool Background */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #ff7e5f, #d39362);
+  background-size: cover;
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('bg.png') no-repeat center center/cover;
+}
+
+.registration-input::placeholder {
+  color: rgb(227, 219, 219);  /* White placeholder text */
+  opacity: 0.7;  /* Make it slightly transparent if you want */
+}
+
+/* Translucent Form Box */
+
+.registration-box {
+  /* background: rgba(28, 14, 14, 0.2); */
+  background:rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);  /* Apply blur effect */
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 350px;
+}
+
+/* Header */
+.registration-header {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Error & Success Messages */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Input Field Container */
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* Input Icons */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+}
+
+/* Input Fields */
+.registration-input {
+  width: 80%;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+}
+
+/* Password Toggle Icon */
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Register Button */
+.registration-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.registration-button:hover {
+  background: #e64a19;
+}
+
+/* Footer */
+.registration-footer {
+  margin-top: 15px;
+  color: white;
+}
+
+.login-link {
+  color: #ffccbc;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
