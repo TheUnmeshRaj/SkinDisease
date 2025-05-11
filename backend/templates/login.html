@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
-    <div class="login-container">
+        <div class="login-container" id="bg-container">
         <div class="login-box">
             <h1 class="login-header">Login</h1>
             <form action="/login" method="POST">
@@ -26,4 +26,25 @@
         </div>
     </div>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const bg = document.getElementById('bg-container');
+    let timeout;
+
+    function playGifThenFreeze() {
+      bg.style.backgroundImage = "url('/static/images/encryption.gif')";
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        bg.style.backgroundImage = "url('/static/images/still.png')";
+      }, 2000);
+    }
+
+    const loginContainer = document.querySelector('.login-container');
+    loginContainer.addEventListener('mouseenter', playGifThenFreeze);
+    loginContainer.addEventListener('focusin', playGifThenFreeze);
+  });
+</script>
+
 </html>

@@ -9,7 +9,7 @@ html, body {
 
 /* Registration Container */
 .registration-container {
-  background-image: url('/static/images/oknice.gif');
+  background-image: url('/static/images/card.gif');
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,14 +3,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  background-image: url("C:\Users\unmes\OneDrive\Desktop\EL\SkinDiseaseAI2\chat-app\src\components\InputText\assets\fine.gif");
+  background-image: url('./assets/fine.gif');
   background-size: auto;
   background-position: center;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   overflow: hidden;
-  
 }
 
 html, body {
@@ -174,7 +173,7 @@ h1, h2, p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("C:\Users\unmes\OneDrive\Desktop\EL\SkinDiseaseAI2\chat-app\src\components\InputText\assets\ok.gif");
+  background-image: url("./assets/ok.gif");
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -225,10 +224,13 @@ h1, h2, p {
 .upload-icon {
   width: 20px;
   height: 20px;
-  background: url("C:/Users/unmes/OneDrive/Desktop/EL/SkinDiseaseAI2/chat-app/src/components/images/clipIcon.png")
-    no-repeat center;
+  /* background-image: url('D:\Dev\SkinDisease\chat-app\src\components\images\clipIcon.png'); */
+
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
 }
+
 
 .upload-button:hover{
   cursor: pointer;
@@ -263,7 +265,7 @@ h1, h2, p {
 .magnifying-glass {
   width: 100%;
   height: 100%;
-  background:image("SkinDiseaseAI2\chat-app\src\components\images\searchIcon.png") no-repeat center;
+  background:image("SkinDiseaseAI2/chat-app/src/components/images/searchIcon.png") no-repeat center;
   background-size: 70%;
   transition: transform 0.3s ease;
 }
@@ -324,7 +326,7 @@ h1, h2, p {
 }
 
 .res-box {
-  background-image: url("C:\Users\unmes\OneDrive\Desktop\EL\SkinDiseaseAI2\chat-app\src\components\InputText\assets\oknice.gif");
+  /* background-image: url("D:\Dev\SkinDisease\chat-app\src\components\InputText\assets\oknice.gif"); */
   background-position: center;
   background-size: auto;
   display: flex;

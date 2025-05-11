@@ -3,7 +3,7 @@
 }
 /* Header Text Styles */
 .header-Light {
-    color: black;
+    /* color: black; */
     font-weight: bold;
   }
   
@@ -59,18 +59,7 @@
     flex:1;
     margin-right: 10px;
 }
-.linkdin-Dark{
-    text-decoration: none;
-    color: white;
-    padding-right: 5px;
-}
-.instagram-Dark{
-    text-decoration: none;
-    color: white;
-    padding-right: 10px;
-    padding-top: 2px;
-    padding-left:4px;
-}
+
 .github-Dark{
     text-decoration: none;
     color: white;
