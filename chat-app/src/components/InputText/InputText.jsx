@@ -5,7 +5,7 @@ import NoteContext from '../NoteContext';
 import googlePoint from './assets/googlePoint.png';
 
 import magnifyingGlass from '../images/searchIcon.png';
-import clipIcon from '../images/clipIcon.png';
+import camera from '../images/camera.png';
 
 const headingTxt = "Welcome to our Skin Disease Detection AI";
 const InitialText = "Your reliable companion for skin health! Our advanced AI tool uses cutting-edge technology to accurately identify and classify a wide range of skin conditions. Whether you're concerned about a new spot, rash, or other issues, our system provides quick and reliable insights, helping you stay informed and proactive about your skin health.";
@@ -176,10 +176,14 @@ const [selectedImage, setSelectedImage] = useState(null);
       </div>
       <div className="ip-search">
   {/* Upload Button for Image */}
-  <button className="upload-button" onClick={() => document.getElementById('imageInput').click()}>
-    <img src={clipIcon} alt="Upload" className="upload-icon" />
-  </button>
   
+  <button
+  className="upload-button"  onClick={() => window.open('http://localhost:3001')}>
+  <img src={camera} alt="Upload" className="upload-icon" />
+ </button>
+
+ 
+
   {/* Hidden Image Input */}
   <input
     type="file"
